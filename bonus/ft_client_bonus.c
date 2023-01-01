@@ -6,7 +6,7 @@
 /*   By: ael-mouz <ael-mouz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 14:59:33 by ael-mouz          #+#    #+#             */
-/*   Updated: 2022/12/29 23:38:59 by ael-mouz         ###   ########.fr       */
+/*   Updated: 2023/01/01 16:47:10 by ael-mouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int	main(int ac, char **av)
 		return (0);
 	i = ft_atoi(av[1]);
 	j = -1;
+	if (ft_strlen(av[2]) == 0)
+		return (0);
 	while (++j < ft_strlen(av[2]))
 		ft_send_bits(i, av[2][j]);
 	ft_send_bits(i, 0);

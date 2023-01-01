@@ -35,31 +35,31 @@ all: server client
 
 server : $(OBJS)
 	@$(CC) $(CFLAG) $(OBJS)  -o $(NAME)
-	@echo "$(shell tput -Txterm setaf 2)█ server ready █\n"
+	@echo "\033[0;32m█ server ready █\n"
 
 client : $(OBJS2)
 	@$(CC) $(CFLAG) $(OBJS2) -o $(NAME2)
-	@echo "$(shell tput -Txterm setaf 2)█ client ready █\n"
+	@echo "\033[0;32m█ client ready █\n"
 
 bonus : $(OBJSB) $(OBJS2B)
 	@$(RM) $(NAME)
 	@$(RM) $(NAME2)
 	@$(CC) $(CFLAG) $(OBJSB)  -o $(NAME)
-	@echo "$(shell tput -Txterm setaf 2)█ server bonus ready █\n"
+	@echo "\033[0;32m█ server bonus ready █\n"
 	@$(CC) $(CFLAG) $(OBJS2B) -o $(NAME2)
-	@echo "$(shell tput -Txterm setaf 2)█ client bonus ready █\n"
+	@echo "\033[0;32m█ client bonus ready █\n"
 
 clean :
 	@$(RM) $(OBJS)
 	@$(RM) $(OBJS2)
 	@$(RM) $(OBJSB)
 	@$(RM) $(OBJS2B)
-	@echo "$(shell tput -Txterm setaf 1)█ object deleted █\n"
+	@echo "\033[0;31m█ object deleted █\n"
 
 fclean: clean
 	@$(RM) $(NAME)
 	@$(RM) $(NAME2)
-	@echo "$(shell tput -Txterm setaf 1)█ program deleted █\n"
+	@echo "\033[0;31m█ program deleted █\n"
 
 re : fclean all
 
